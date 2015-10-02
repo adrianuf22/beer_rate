@@ -51,18 +51,17 @@
 			row.appendTo('#beers_catalog tbody');
 		},
 		listCatalog = function () {
-		var beers = localStorage.getItem('beers'),
-			parsedBeers;
+			var beers = localStorage.getItem('beers'),
+				parsedBeers;
 
-		if (beers) {
-			parsedBeers = JSON.parse(beers);
+			if (beers) {
+				parsedBeers = JSON.parse(beers);
 
-			for(var ix = 0; ix < parsedBeers.length; ix += 1) {
-				addListBeer(parsedBeers[ix]);	
+				for(var ix = 0; ix < parsedBeers.length; ix += 1) {
+					addListBeer(parsedBeers[ix]);	
+				}
 			}
-		}
-
-	};
+		};
 
 	listCatalog();
 }());
