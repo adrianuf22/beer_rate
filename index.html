@@ -6,12 +6,11 @@
 </head>
 <body>
 	<main class="container">
-		<h1>Beer Rate</h1>
-		
+		<h1>Beer Rate</h1>		
 		<form name="beer_form" data-toggle="validator">
 			<div class="form-group">
 				<label for="beer_name">Nome</label>
-				<input data-error="O campo nome é obrigatório!" id="beer_name" class="form-control beer_name" type="text" name="beer_name" required>
+				<input data-error="Informe o nome da cerveja" id="beer_name" class="form-control beer_name" type="text" name="beer_name" required>
 				<span class="help-block with-errors"></span>
 			</div>
 
@@ -21,43 +20,49 @@
 			</div>
 			
 			<div class="form-group required">
-				<label>Preço</label>
-				<input type="text" class="form-control" name="beer_price" required>
+				<label for="beer_price">Preço</label>
+				<input data-error="Informe o valor" class="form-control" type="number" step="0.1" name="beer_price" required>
+				<span class="help-block with-errors"></span>
 			</div>
 
 			<div class="form-group required">
 				<label>Onde comprar</label>
-				<input type="text" class="form-control" name="beer_tobuy">
+				<input data-error="Informe onde comprar" type="text" class="form-control" name="beer_tobuy" required>
+				<span class="help-block with-errors"></span>
 			</div>
 
 			<div class="form-group required">
 				<label>Categoria</label>
-				<select class="form-control" name="beer_type" required>
+				<select data-error="Selecione a categoria" class="form-control" name="beer_type" required>
 					<option value=""></option>
 					<option value="lager">Lager</option>
 					<option value="pilsen">Pilsen</option>
 					<option value="ipa">IPA</option>
 				</select>
+				<span class="help-block with-errors"></span>
 			</div>
 
 			<div class="form-group required">
 				<label>País de origem</label>
-				<select class="form-control" name="beer_country" required>
+				<select data-error="Selecione o país de origem" class="form-control" name="beer_country" required>
 					<option value=""></option>
 					<option value="br">Brasil</option>
 					<option value="us">Estados Unidos</option>
 					<option value="gr">Alemanha</option>
 				</select>
+				<span class="help-block with-errors"></span>
 			</div>
 
 			<div class="form-group">
 				<label>Teor alcoólico</label>
-				<input class="form-control" type="number" name="beer_funlevel" step="0.1" min="0" max="100" required>
+				<input data-error="Digite o teor alcoólico" class="form-control" type="number" name="beer_funlevel" step="0.1" min="0" max="100" required>
+				<span class="help-block with-errors"></span>
 			</div>
 
 			<div class="form-group">
 				<label>Descrição</label>
-				<textarea class="form-control" name="beer_comments" required></textarea>
+				<textarea data-error="Descreva a cerveja" class="form-control" name="beer_comments" required></textarea>
+				<span class="help-block with-errors"></span>
 			</div>
 
 			<button class="btn btn-success" name="beer_send" type="submit">
@@ -68,12 +73,8 @@
 		<table class="table" id="beers_catalog">
 			<thead>
 				<tr>
-					<th>
-						Nome
-					</th>
-					<th>
-						Tipo
-					</th>
+					<th>Nome</th>
+					<th>Tipo</th>
 				</tr>
 			</thead>
 			<tbody>
